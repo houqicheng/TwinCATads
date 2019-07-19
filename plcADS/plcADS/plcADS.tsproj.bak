@@ -1,4 +1,20 @@
-<?xml version="1.0"?>
-<TcSmProject>
-	<Project/>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4022.27">
+	<Project ProjectGUID="{31FF67CE-DEE6-402C-A59A-04738FA1EB98}" Target64Bit="true" ShowHideConfigurations="#x306">
+		<System>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{E2CA34D6-956C-4977-9FBD-3845618E21C0}" Name="ads" PrjFilePath="ads\ads.plcproj" TmcFilePath="ads\ads.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2">
+					<Name>ads Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+				</Instance>
+			</Project>
+		</Plc>
+	</Project>
 </TcSmProject>

@@ -2,19 +2,51 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
   <POU Name="MAIN" Id="{a49e136d-7703-4eb9-8782-dfc8e07c6728}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
-VAR
-	
-// primitv datatype
+VAR	
+// primitiv datatype
 
-	
+	int1 :INT;
+	bool1	:BOOL;
+	dint1	:DINT;
+	byte1	:BYTE;
+	real1	:REAL;
+	lreal1	:LREAL;	
 	
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[//Reading and writing PLC variables of anytype
+int1	:= 100;
+bool1 	:=TRUE;
+
+dint1	:= 101;
+
+byte1	:= 10;
+
+real1	:= 123.4;
+
+lreal1	:= 567.89;
+
+
+
+
+]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="29" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="31" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="15" Count="2" />
+      <LineId Id="12" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
