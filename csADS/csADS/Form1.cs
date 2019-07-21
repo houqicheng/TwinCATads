@@ -15,7 +15,9 @@ namespace csADS
     {
         TcAdsClient client;
         int hint;
+
         int hbool;
+
         public Form1()
         {
             InitializeComponent();
