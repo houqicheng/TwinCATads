@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.16">
+  <DUT Name="ComplexStruct" Id="{15b4b77e-d9ed-4452-9369-ebc974ec09b9}">
+    <Declaration><![CDATA[TYPE ComplexStruct :
+STRUCT
+	intVal	:INT;
+	DintArr: ARRAY[1..4] OF DINT := [1, 2, 3, 4];
+	BoolVal	:BOOL;
+	ByteVal	:BYTE;
+	//LrealVal	:LREAL;
+	strVal 	:STRING(5);
+END_STRUCT
+END_TYPE
+
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

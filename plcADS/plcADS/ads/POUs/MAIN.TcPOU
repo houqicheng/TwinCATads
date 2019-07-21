@@ -12,6 +12,11 @@ VAR
 	real1	:REAL;
 	lreal1	:LREAL;	
 	
+	str1	:STRING(50);
+	str2	:STRING(50);
+	i:INT;
+	intArray: ARRAY[1..10] OF INT;
+	complexStruct		:ComplexStruct;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -27,6 +32,18 @@ real1	:= 123.4;
 
 lreal1	:= 567.89;
 
+str1 := 'JOT';
+
+str2 := 'MAG';
+
+FOR i:= 1 TO 10 DO
+	intArray[i] := 20 + i;
+END_FOR
+
+complexStruct.BoolVal	:= TRUE;
+complexStruct.ByteVal	:= 10;
+complexStruct.intVal	:= 1200;
+complexStruct.strVal	:= 'hello';
 
 
 
@@ -44,8 +61,19 @@ lreal1	:= 567.89;
       <LineId Id="30" Count="0" />
       <LineId Id="34" Count="0" />
       <LineId Id="33" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="51" Count="0" />
       <LineId Id="32" Count="0" />
-      <LineId Id="15" Count="2" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="55" Count="1" />
+      <LineId Id="58" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="59" Count="1" />
+      <LineId Id="62" Count="1" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="17" Count="0" />
       <LineId Id="12" Count="0" />
     </LineIds>
   </POU>
