@@ -11,3 +11,6 @@ C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.csproj.CoreCompileInput
 C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.csproj.CopyComplete
 C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.exe
 C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.pdb
+D:\MyGitRepo\TwinCATads\TwinCATads\csADS\csADS\bin\Debug\csADS.exe.config
+D:\MyGitRepo\TwinCATads\TwinCATads\csADS\csADS\obj\Debug\csADS.exe
+D:\MyGitRepo\TwinCATads\TwinCATads\csADS\csADS\obj\Debug\csADS.pdb
