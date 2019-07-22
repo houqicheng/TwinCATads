@@ -5,52 +5,28 @@
 VAR	
 // primitiv datatype
 
-	int1 :INT;
-	bool1	:BOOL;
-	dint1	:DINT;
-	byte1	:BYTE;
-	real1	:REAL;
-	lreal1	:LREAL;	
+	int1 :INT:=100;
+	bool1	:BOOL:= TRUE;
+	dint1	:DINT:= 101;
+	byte1	:BYTE:= 10;
+	real1	:REAL:=123.45;
+	lreal1	:LREAL:= 56.78;	
 	
-	str1	:STRING(50);
-	str2	:STRING(50);
+	str1	:STRING(50):= 'JOT';
+	str2	:STRING(50):= 'MAG';
 	i:INT;
-	intArray: ARRAY[1..10] OF INT;
+	intArray: ARRAY [1..10] OF INT := [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 	DintArray1	: ARRAY[1..10] OF DINT;
 	complexStruct		:ComplexStruct;
-	j: DINT;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[//Reading and writing PLC variables of anytype
-int1	:= 100;
-bool1 	:=TRUE;
+;
 
-dint1	:= 101;
 
-byte1	:= 10;
 
-real1	:= 123.4;
 
-lreal1	:= 567.89;
-
-str1 := 'JOT';
-
-str2 := 'MAG';
-
-FOR i:= 1 TO 10 DO
-	intArray[i] := 20 + i;
-END_FOR
-
-FOR j:= 1 TO 10 DO
-	DintArray1[i] := 20 + i;
-END_FOR
-
-complexStruct.BoolVal	:= TRUE;
-complexStruct.ByteVal	:= 10;
-complexStruct.intVal	:= 1200;
-complexStruct.strVal	:= 'hello';
-complexStruct.LrealVal 	:= 123.123;
 
 
 
@@ -59,29 +35,10 @@ complexStruct.LrealVal 	:= 123.123;
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="2" Count="0" />
-      <LineId Id="13" Count="0" />
-      <LineId Id="25" Count="0" />
-      <LineId Id="27" Count="0" />
-      <LineId Id="26" Count="0" />
-      <LineId Id="29" Count="0" />
-      <LineId Id="28" Count="0" />
-      <LineId Id="31" Count="0" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="34" Count="0" />
-      <LineId Id="33" Count="0" />
-      <LineId Id="50" Count="0" />
-      <LineId Id="49" Count="0" />
-      <LineId Id="52" Count="0" />
-      <LineId Id="51" Count="0" />
       <LineId Id="32" Count="0" />
-      <LineId Id="15" Count="0" />
-      <LineId Id="55" Count="1" />
-      <LineId Id="85" Count="2" />
-      <LineId Id="84" Count="0" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="85" Count="0" />
       <LineId Id="58" Count="0" />
-      <LineId Id="16" Count="0" />
-      <LineId Id="59" Count="1" />
-      <LineId Id="62" Count="0" />
       <LineId Id="81" Count="1" />
       <LineId Id="63" Count="0" />
       <LineId Id="61" Count="0" />

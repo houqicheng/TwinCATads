@@ -3,13 +3,14 @@
   <DUT Name="ComplexStruct" Id="{15b4b77e-d9ed-4452-9369-ebc974ec09b9}">
     <Declaration><![CDATA[TYPE ComplexStruct :
 STRUCT
-	intVal	:INT;
+	intVal	:INT:=100;
 	DintArr: ARRAY[1..5] OF DINT := [1, 2, 3, 4,100];
-	BoolVal	:BOOL;
-	ByteVal	:BYTE;
-	LrealVal	:LREAL;
-	strVal 	:STRING(5);
+	BoolVal	:BOOL:= TRUE;
+	ByteVal	:BYTE:=12;
+	LrealVal	:LREAL:= 123.67;
+	strVal 	:STRING(5):= 'hello';
 	//strArray: ARRAY[1..3] OF STRING(10) := ['abc', 'qwe', 'hjk'];  ??
+	SimpleStruct1		:SimpleStruct;	
 END_STRUCT
 END_TYPE
 

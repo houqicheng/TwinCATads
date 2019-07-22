@@ -26,7 +26,7 @@ namespace csADS
         //-------read int array
         int hintArray;
         AdsBinaryReader Reader;
-        AdsStream stream;
+        AdsStream stream;        
         //------------
         int hComplexStruct;
 
@@ -56,7 +56,7 @@ namespace csADS
                 //----------Read int array--------
                 stream = new AdsStream(10 * 2);
 
-                Reader = new AdsBinaryReader(stream);
+                Reader = new AdsBinaryReader(stream);               
 
                 hintArray = client.CreateVariableHandle("MAIN.intArray");
                 //-----------------------------------
@@ -140,12 +140,41 @@ namespace csADS
             txtStr1Val.Text = cs.stringVal.ToString();
             txtLrealVal.Text = cs.lrealVal.ToString();
 
+            txtSimpleDint.Text = cs.simple.dintVal.ToString();
+            txtSimpleLreal.Text = cs.simple.lrealVal.ToString();
+
             
         }
 
+        private void BtnWrite_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //----write primitive data-------
+                client.WriteAny(hint, short.Parse(txtINT.Text));
+                client.WriteAny(hBool, Boolean.Parse(txtBool.Text));
+                client.WriteAny(hDint1, int.Parse(txtDint.Text));
+                client.WriteAny(hByte1, byte.Parse(txtByte.Text));
+                client.WriteAny(hReal1, Single.Parse(txtReal.Text));
+                client.WriteAny(hLreal1, double.Parse(txtLreal.Text));
+                client.WriteAny(hstr1, txtStr1.Text,new int[] { 50});
+                client.WriteAny(hstr2, txtStr2.Text, new int[] { 50 });
+                //----write primitive data-------
+                     
+                
+
+
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Write all " + err.Message);
+            }
+            
+
+        }
     }
-    
-    [StructLayout(LayoutKind.Sequential,Pack =1)]
+
+    [StructLayout(LayoutKind.Sequential,Pack =0)]
     public class ComplexStruct
     {
         public short intVal;
@@ -162,10 +191,18 @@ namespace csADS
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 6)]
         public string stringVal = "";
 
+        public SimpleStruct simple;
         //[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]        
         //public string[] strArrray = new string[3] { "","",""};
         // ??????how to read the string array from PLC?????
         
+    }
+
+    [StructLayout(LayoutKind.Sequential,Pack =0)]
+    public class SimpleStruct
+    {
+        public double lrealVal;
+        public int dintVal;
     }
 
      //

@@ -47,12 +47,12 @@
             this.txtINT = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lstArray2 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
             this.lstArray = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtStrArray = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.BtnReadStruct = new System.Windows.Forms.Button();
             this.txtStr1Val = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtLrealVal = new System.Windows.Forms.TextBox();
@@ -65,10 +65,22 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtIntVal = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.lstArray2 = new System.Windows.Forms.ListBox();
+            this.BtnReadStruct = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtSimpleDint = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtSimpleLreal = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.BtnWrite = new System.Windows.Forms.Button();
+            this.txtIntArray01 = new System.Windows.Forms.TextBox();
+            this.txtIntArray02 = new System.Windows.Forms.TextBox();
+            this.txtIntArray03 = new System.Windows.Forms.TextBox();
+            this.txtIntArray04 = new System.Windows.Forms.TextBox();
+            this.txtIntArray05 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -218,7 +230,7 @@
             // 
             // btnReadPrimitive
             // 
-            this.btnReadPrimitive.Location = new System.Drawing.Point(11, 368);
+            this.btnReadPrimitive.Location = new System.Drawing.Point(6, 373);
             this.btnReadPrimitive.Name = "btnReadPrimitive";
             this.btnReadPrimitive.Size = new System.Drawing.Size(85, 32);
             this.btnReadPrimitive.TabIndex = 2;
@@ -245,15 +257,29 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtIntArray05);
+            this.groupBox2.Controls.Add(this.txtIntArray04);
+            this.groupBox2.Controls.Add(this.txtIntArray03);
+            this.groupBox2.Controls.Add(this.txtIntArray02);
+            this.groupBox2.Controls.Add(this.txtIntArray01);
             this.groupBox2.Controls.Add(this.lstArray2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.lstArray);
             this.groupBox2.Location = new System.Drawing.Point(222, 16);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(129, 487);
+            this.groupBox2.Size = new System.Drawing.Size(204, 487);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
+            // 
+            // lstArray2
+            // 
+            this.lstArray2.FormattingEnabled = true;
+            this.lstArray2.ItemHeight = 16;
+            this.lstArray2.Location = new System.Drawing.Point(11, 236);
+            this.lstArray2.Name = "lstArray2";
+            this.lstArray2.Size = new System.Drawing.Size(78, 196);
+            this.lstArray2.TabIndex = 4;
             // 
             // button1
             // 
@@ -278,7 +304,6 @@
             // 
             this.groupBox3.Controls.Add(this.txtStrArray);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.BtnReadStruct);
             this.groupBox3.Controls.Add(this.txtStr1Val);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.txtLrealVal);
@@ -291,12 +316,12 @@
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.txtIntVal);
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Location = new System.Drawing.Point(367, 26);
+            this.groupBox3.Location = new System.Drawing.Point(432, 26);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(202, 408);
+            this.groupBox3.Size = new System.Drawing.Size(202, 271);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = " ";
+            this.groupBox3.Text = " ComplexStruct";
             // 
             // txtStrArray
             // 
@@ -314,16 +339,6 @@
             this.label9.Size = new System.Drawing.Size(80, 25);
             this.label9.TabIndex = 31;
             this.label9.Text = "strArray";
-            // 
-            // BtnReadStruct
-            // 
-            this.BtnReadStruct.Location = new System.Drawing.Point(23, 355);
-            this.BtnReadStruct.Name = "BtnReadStruct";
-            this.BtnReadStruct.Size = new System.Drawing.Size(85, 32);
-            this.BtnReadStruct.TabIndex = 17;
-            this.BtnReadStruct.Text = "Read";
-            this.BtnReadStruct.UseVisualStyleBackColor = true;
-            this.BtnReadStruct.Click += new System.EventHandler(this.BtnReadStruct_Click);
             // 
             // txtStr1Val
             // 
@@ -427,20 +442,118 @@
             this.label16.TabIndex = 17;
             this.label16.Text = "int";
             // 
-            // lstArray2
+            // BtnReadStruct
             // 
-            this.lstArray2.FormattingEnabled = true;
-            this.lstArray2.ItemHeight = 16;
-            this.lstArray2.Location = new System.Drawing.Point(11, 236);
-            this.lstArray2.Name = "lstArray2";
-            this.lstArray2.Size = new System.Drawing.Size(78, 196);
-            this.lstArray2.TabIndex = 4;
+            this.BtnReadStruct.Location = new System.Drawing.Point(11, 156);
+            this.BtnReadStruct.Name = "BtnReadStruct";
+            this.BtnReadStruct.Size = new System.Drawing.Size(85, 32);
+            this.BtnReadStruct.TabIndex = 17;
+            this.BtnReadStruct.Text = "Read";
+            this.BtnReadStruct.UseVisualStyleBackColor = true;
+            this.BtnReadStruct.Click += new System.EventHandler(this.BtnReadStruct_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtSimpleDint);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.BtnReadStruct);
+            this.groupBox4.Controls.Add(this.txtSimpleLreal);
+            this.groupBox4.Controls.Add(this.label17);
+            this.groupBox4.Location = new System.Drawing.Point(432, 303);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(202, 194);
+            this.groupBox4.TabIndex = 33;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "SImpleStruct";
+            // 
+            // txtSimpleDint
+            // 
+            this.txtSimpleDint.Location = new System.Drawing.Point(95, 83);
+            this.txtSimpleDint.Name = "txtSimpleDint";
+            this.txtSimpleDint.Size = new System.Drawing.Size(101, 22);
+            this.txtSimpleDint.TabIndex = 36;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(7, 79);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(46, 25);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Dint";
+            // 
+            // txtSimpleLreal
+            // 
+            this.txtSimpleLreal.Location = new System.Drawing.Point(95, 50);
+            this.txtSimpleLreal.Name = "txtSimpleLreal";
+            this.txtSimpleLreal.Size = new System.Drawing.Size(101, 22);
+            this.txtSimpleLreal.TabIndex = 34;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label17.Location = new System.Drawing.Point(7, 46);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(55, 25);
+            this.label17.TabIndex = 33;
+            this.label17.Text = "Lreal";
+            // 
+            // BtnWrite
+            // 
+            this.BtnWrite.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.BtnWrite.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BtnWrite.Location = new System.Drawing.Point(11, 442);
+            this.BtnWrite.Name = "BtnWrite";
+            this.BtnWrite.Size = new System.Drawing.Size(158, 61);
+            this.BtnWrite.TabIndex = 17;
+            this.BtnWrite.Text = "Write All";
+            this.BtnWrite.UseVisualStyleBackColor = false;
+            this.BtnWrite.Click += new System.EventHandler(this.BtnWrite_Click);
+            // 
+            // txtIntArray01
+            // 
+            this.txtIntArray01.Location = new System.Drawing.Point(97, 41);
+            this.txtIntArray01.Name = "txtIntArray01";
+            this.txtIntArray01.Size = new System.Drawing.Size(101, 22);
+            this.txtIntArray01.TabIndex = 33;
+            // 
+            // txtIntArray02
+            // 
+            this.txtIntArray02.Location = new System.Drawing.Point(97, 76);
+            this.txtIntArray02.Name = "txtIntArray02";
+            this.txtIntArray02.Size = new System.Drawing.Size(101, 22);
+            this.txtIntArray02.TabIndex = 34;
+            // 
+            // txtIntArray03
+            // 
+            this.txtIntArray03.Location = new System.Drawing.Point(97, 111);
+            this.txtIntArray03.Name = "txtIntArray03";
+            this.txtIntArray03.Size = new System.Drawing.Size(101, 22);
+            this.txtIntArray03.TabIndex = 35;
+            // 
+            // txtIntArray04
+            // 
+            this.txtIntArray04.Location = new System.Drawing.Point(97, 143);
+            this.txtIntArray04.Name = "txtIntArray04";
+            this.txtIntArray04.Size = new System.Drawing.Size(101, 22);
+            this.txtIntArray04.TabIndex = 36;
+            // 
+            // txtIntArray05
+            // 
+            this.txtIntArray05.Location = new System.Drawing.Point(97, 180);
+            this.txtIntArray05.Name = "txtIntArray05";
+            this.txtIntArray05.Size = new System.Drawing.Size(101, 22);
+            this.txtIntArray05.TabIndex = 37;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 515);
+            this.Controls.Add(this.BtnWrite);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -451,8 +564,11 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -497,6 +613,17 @@
         private System.Windows.Forms.TextBox txtStrArray;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ListBox lstArray2;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txtSimpleDint;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtSimpleLreal;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button BtnWrite;
+        private System.Windows.Forms.TextBox txtIntArray05;
+        private System.Windows.Forms.TextBox txtIntArray04;
+        private System.Windows.Forms.TextBox txtIntArray03;
+        private System.Windows.Forms.TextBox txtIntArray02;
+        private System.Windows.Forms.TextBox txtIntArray01;
     }
 }
 
