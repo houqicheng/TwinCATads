@@ -50,6 +50,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lstArray = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtStrArray = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.BtnReadStruct = new System.Windows.Forms.Button();
             this.txtStr1Val = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -63,6 +65,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtIntVal = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.lstArray2 = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -242,18 +245,19 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lstArray2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.lstArray);
             this.groupBox2.Location = new System.Drawing.Point(222, 16);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(129, 419);
+            this.groupBox2.Size = new System.Drawing.Size(129, 487);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(6, 381);
+            this.button1.Location = new System.Drawing.Point(6, 449);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 32);
             this.button1.TabIndex = 3;
@@ -267,11 +271,13 @@
             this.lstArray.ItemHeight = 16;
             this.lstArray.Location = new System.Drawing.Point(6, 33);
             this.lstArray.Name = "lstArray";
-            this.lstArray.Size = new System.Drawing.Size(78, 324);
+            this.lstArray.Size = new System.Drawing.Size(78, 196);
             this.lstArray.TabIndex = 0;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtStrArray);
+            this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.BtnReadStruct);
             this.groupBox3.Controls.Add(this.txtStr1Val);
             this.groupBox3.Controls.Add(this.label10);
@@ -291,6 +297,23 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = " ";
+            // 
+            // txtStrArray
+            // 
+            this.txtStrArray.Location = new System.Drawing.Point(94, 218);
+            this.txtStrArray.Name = "txtStrArray";
+            this.txtStrArray.Size = new System.Drawing.Size(101, 22);
+            this.txtStrArray.TabIndex = 32;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(6, 214);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 25);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "strArray";
             // 
             // BtnReadStruct
             // 
@@ -404,11 +427,20 @@
             this.label16.TabIndex = 17;
             this.label16.Text = "int";
             // 
+            // lstArray2
+            // 
+            this.lstArray2.FormattingEnabled = true;
+            this.lstArray2.ItemHeight = 16;
+            this.lstArray2.Location = new System.Drawing.Point(11, 236);
+            this.lstArray2.Name = "lstArray2";
+            this.lstArray2.Size = new System.Drawing.Size(78, 196);
+            this.lstArray2.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 451);
+            this.ClientSize = new System.Drawing.Size(789, 515);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -462,6 +494,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtIntVal;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtStrArray;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ListBox lstArray2;
     }
 }
 

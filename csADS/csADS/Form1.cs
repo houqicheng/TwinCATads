@@ -30,6 +30,7 @@ namespace csADS
         //------------
         int hComplexStruct;
 
+        int hdintArray1;
 
         public Form1()
         {
@@ -58,8 +59,11 @@ namespace csADS
                 Reader = new AdsBinaryReader(stream);
 
                 hintArray = client.CreateVariableHandle("MAIN.intArray");
-
                 //-----------------------------------
+                hdintArray1 = client.CreateVariableHandle("MAIN.DintArray1");
+
+
+
             }
             catch (Exception err)
             {
@@ -89,7 +93,7 @@ namespace csADS
             {
                 MessageBox.Show("btnReadPrimitive " + err.Message);
             }
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -101,7 +105,11 @@ namespace csADS
             {
                 lstArray.Items.Add(Reader.ReadInt16());
             }
-            
+
+            lstArray2.Items.Clear();
+
+           // client.ReadAny(hdintArray1, typeof(int), new int[] { 40 });
+           //??  how to read DINT array from plc by ReadAny method  ??
 
         }
 
@@ -125,30 +133,39 @@ namespace csADS
             string temp = "";
             txtIntVal.Text = cs.intVal.ToString();
             temp = cs.dintArray[0].ToString() + ", " + cs.dintArray[1].ToString() + ", ";
-            temp = temp + cs.dintArray[2].ToString() + "," + cs.dintArray[3].ToString();
+            temp = temp + cs.dintArray[2].ToString() + "," + cs.dintArray[3].ToString() + " ," + cs.dintArray[4].ToString();
             txtDintVal.Text = temp;
             txtBoolVal.Text = cs.boolVal.ToString();
             txtByteVal.Text = cs.byteVal.ToString();
             txtStr1Val.Text = cs.stringVal.ToString();
+            txtLrealVal.Text = cs.lrealVal.ToString();
+
             
         }
 
     }
     
-    [StructLayout(LayoutKind.Sequential,Pack =0)]
+    [StructLayout(LayoutKind.Sequential,Pack =1)]
     public class ComplexStruct
     {
         public short intVal;
-        [MarshalAs(UnmanagedType.ByValArray,SizeConst =4)]
-        public int[] dintArray = new int[4];
+        [MarshalAs(UnmanagedType.ByValArray,SizeConst =5)]
+        public int[] dintArray = new int[5];
 
         [MarshalAs(UnmanagedType.I1)]
         public bool boolVal;
 
         public byte byteVal;
 
+        public double lrealVal;
+
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 6)]
         public string stringVal = "";
+
+        //[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]        
+        //public string[] strArrray = new string[3] { "","",""};
+        // ??????how to read the string array from PLC?????
+        
     }
 
      //

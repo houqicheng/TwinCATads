@@ -1,16 +1,3 @@
 D:\MyGitRepo\TwinCATads\TwinCATads\csADS\csADS\bin\Debug\csADS.exe.config
 D:\MyGitRepo\TwinCATads\TwinCATads\csADS\csADS\obj\Debug\csADS.exe
 D:\MyGitRepo\TwinCATads\TwinCATads\csADS\csADS\obj\Debug\csADS.pdb
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.csprojAssemblyReference.cache
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.Form1.resources
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.Properties.Resources.resources
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.csproj.GenerateResource.cache
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.csproj.CoreCompileInputs.cache
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\bin\Debug\csADS.exe.config
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\bin\Debug\csADS.exe
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\bin\Debug\csADS.pdb
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\bin\Debug\TwinCAT.Ads.dll
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\bin\Debug\TwinCAT.Ads.xml
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.csproj.CopyComplete
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.exe
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.pdb

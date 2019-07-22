@@ -16,7 +16,9 @@ VAR
 	str2	:STRING(50);
 	i:INT;
 	intArray: ARRAY[1..10] OF INT;
+	DintArray1	: ARRAY[1..10] OF DINT;
 	complexStruct		:ComplexStruct;
+	j: DINT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -40,10 +42,16 @@ FOR i:= 1 TO 10 DO
 	intArray[i] := 20 + i;
 END_FOR
 
+FOR j:= 1 TO 10 DO
+	DintArray1[i] := 20 + i;
+END_FOR
+
 complexStruct.BoolVal	:= TRUE;
 complexStruct.ByteVal	:= 10;
 complexStruct.intVal	:= 1200;
 complexStruct.strVal	:= 'hello';
+complexStruct.LrealVal 	:= 123.123;
+
 
 
 
@@ -68,10 +76,14 @@ complexStruct.strVal	:= 'hello';
       <LineId Id="32" Count="0" />
       <LineId Id="15" Count="0" />
       <LineId Id="55" Count="1" />
+      <LineId Id="85" Count="2" />
+      <LineId Id="84" Count="0" />
       <LineId Id="58" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="59" Count="1" />
-      <LineId Id="62" Count="1" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="81" Count="1" />
+      <LineId Id="63" Count="0" />
       <LineId Id="61" Count="0" />
       <LineId Id="17" Count="0" />
       <LineId Id="12" Count="0" />

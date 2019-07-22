@@ -4,11 +4,12 @@
     <Declaration><![CDATA[TYPE ComplexStruct :
 STRUCT
 	intVal	:INT;
-	DintArr: ARRAY[1..4] OF DINT := [1, 2, 3, 4];
+	DintArr: ARRAY[1..5] OF DINT := [1, 2, 3, 4,100];
 	BoolVal	:BOOL;
 	ByteVal	:BYTE;
-	//LrealVal	:LREAL;
+	LrealVal	:LREAL;
 	strVal 	:STRING(5);
+	//strArray: ARRAY[1..3] OF STRING(10) := ['abc', 'qwe', 'hjk'];  ??
 END_STRUCT
 END_TYPE
 
