@@ -72,11 +72,6 @@
             this.txtSimpleLreal = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.BtnWrite = new System.Windows.Forms.Button();
-            this.txtIntArray01 = new System.Windows.Forms.TextBox();
-            this.txtIntArray02 = new System.Windows.Forms.TextBox();
-            this.txtIntArray03 = new System.Windows.Forms.TextBox();
-            this.txtIntArray04 = new System.Windows.Forms.TextBox();
-            this.txtIntArray05 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -257,11 +252,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtIntArray05);
-            this.groupBox2.Controls.Add(this.txtIntArray04);
-            this.groupBox2.Controls.Add(this.txtIntArray03);
-            this.groupBox2.Controls.Add(this.txtIntArray02);
-            this.groupBox2.Controls.Add(this.txtIntArray01);
             this.groupBox2.Controls.Add(this.lstArray2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.lstArray);
@@ -512,41 +502,6 @@
             this.BtnWrite.UseVisualStyleBackColor = false;
             this.BtnWrite.Click += new System.EventHandler(this.BtnWrite_Click);
             // 
-            // txtIntArray01
-            // 
-            this.txtIntArray01.Location = new System.Drawing.Point(97, 41);
-            this.txtIntArray01.Name = "txtIntArray01";
-            this.txtIntArray01.Size = new System.Drawing.Size(101, 22);
-            this.txtIntArray01.TabIndex = 33;
-            // 
-            // txtIntArray02
-            // 
-            this.txtIntArray02.Location = new System.Drawing.Point(97, 76);
-            this.txtIntArray02.Name = "txtIntArray02";
-            this.txtIntArray02.Size = new System.Drawing.Size(101, 22);
-            this.txtIntArray02.TabIndex = 34;
-            // 
-            // txtIntArray03
-            // 
-            this.txtIntArray03.Location = new System.Drawing.Point(97, 111);
-            this.txtIntArray03.Name = "txtIntArray03";
-            this.txtIntArray03.Size = new System.Drawing.Size(101, 22);
-            this.txtIntArray03.TabIndex = 35;
-            // 
-            // txtIntArray04
-            // 
-            this.txtIntArray04.Location = new System.Drawing.Point(97, 143);
-            this.txtIntArray04.Name = "txtIntArray04";
-            this.txtIntArray04.Size = new System.Drawing.Size(101, 22);
-            this.txtIntArray04.TabIndex = 36;
-            // 
-            // txtIntArray05
-            // 
-            this.txtIntArray05.Location = new System.Drawing.Point(97, 180);
-            this.txtIntArray05.Name = "txtIntArray05";
-            this.txtIntArray05.Size = new System.Drawing.Size(101, 22);
-            this.txtIntArray05.TabIndex = 37;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -564,7 +519,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -619,11 +573,6 @@
         private System.Windows.Forms.TextBox txtSimpleLreal;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button BtnWrite;
-        private System.Windows.Forms.TextBox txtIntArray05;
-        private System.Windows.Forms.TextBox txtIntArray04;
-        private System.Windows.Forms.TextBox txtIntArray03;
-        private System.Windows.Forms.TextBox txtIntArray02;
-        private System.Windows.Forms.TextBox txtIntArray01;
     }
 }
 

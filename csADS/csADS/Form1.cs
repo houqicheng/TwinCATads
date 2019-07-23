@@ -26,7 +26,7 @@ namespace csADS
         //-------read int array
         int hintArray;
         AdsBinaryReader Reader;
-        AdsStream stream;        
+        AdsStream stream;
         //------------
         int hComplexStruct;
 
@@ -56,7 +56,7 @@ namespace csADS
                 //----------Read int array--------
                 stream = new AdsStream(10 * 2);
 
-                Reader = new AdsBinaryReader(stream);               
+                Reader = new AdsBinaryReader(stream);
 
                 hintArray = client.CreateVariableHandle("MAIN.intArray");
                 //-----------------------------------
@@ -68,7 +68,7 @@ namespace csADS
             catch (Exception err)
             {
                 MessageBox.Show("Form load " + err.Message);
-            }  
+            }
         }
 
         private void btnReadPrimitive_Click(object sender, EventArgs e)
@@ -80,20 +80,20 @@ namespace csADS
                 txtDint.Text = Convert.ToString(client.ReadAny(hDint1, typeof(int)));
                 txtLreal.Text = Convert.ToString(client.ReadAny(hLreal1, typeof(double)));
                 txtReal.Text = Convert.ToString(client.ReadAny(hReal1, typeof(Single)));
-                txtByte.Text = Convert.ToString(client.ReadAny(hByte1, typeof(Byte)));                
                 txtByte.Text = Convert.ToString(client.ReadAny(hByte1, typeof(Byte)));
                 txtByte.Text = Convert.ToString(client.ReadAny(hByte1, typeof(Byte)));
-                txtStr1.Text = Convert.ToString(client.ReadAny(hstr1,typeof(string),new int[] { 50}));
-                txtStr2.Text = Convert.ToString(client.ReadAny(hstr2,typeof(string),new int[] { 50}));
+                txtByte.Text = Convert.ToString(client.ReadAny(hByte1, typeof(Byte)));
+                txtStr1.Text = Convert.ToString(client.ReadAny(hstr1, typeof(string), new int[] { 50 }));
+                txtStr2.Text = Convert.ToString(client.ReadAny(hstr2, typeof(string), new int[] { 50 }));
 
 
-                
+
             }
             catch (Exception err)
             {
                 MessageBox.Show("btnReadPrimitive " + err.Message);
             }
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -108,8 +108,8 @@ namespace csADS
 
             lstArray2.Items.Clear();
 
-           // client.ReadAny(hdintArray1, typeof(int), new int[] { 40 });
-           //??  how to read DINT array from plc by ReadAny method  ??
+            // client.ReadAny(hdintArray1, typeof(int), new int[] { 40 });
+            //??  how to read DINT array from plc by ReadAny method  ??
 
         }
 
@@ -132,8 +132,8 @@ namespace csADS
         {
             string temp = "";
             txtIntVal.Text = cs.intVal.ToString();
-            temp = cs.dintArray[0].ToString() + ", " + cs.dintArray[1].ToString() + ", ";
-            temp = temp + cs.dintArray[2].ToString() + "," + cs.dintArray[3].ToString() + " ," + cs.dintArray[4].ToString();
+            temp = cs.dintArray[0].ToString() + "," + cs.dintArray[1].ToString() + ",";
+            temp = temp + cs.dintArray[2].ToString() + "," + cs.dintArray[3].ToString() + "," + cs.dintArray[4].ToString();
             txtDintVal.Text = temp;
             txtBoolVal.Text = cs.boolVal.ToString();
             txtByteVal.Text = cs.byteVal.ToString();
@@ -143,7 +143,26 @@ namespace csADS
             txtSimpleDint.Text = cs.simple.dintVal.ToString();
             txtSimpleLreal.Text = cs.simple.lrealVal.ToString();
 
+
+        }
+        private ComplexStruct GetStruct()
+        {
+            ComplexStruct cs = new ComplexStruct();
+            cs.intVal = short.Parse(txtIntVal.Text);
+            string[] str = txtDintVal.Text.Split(new char[] { ',' });
+            for (int i = 0; i < str.Length; i++)
+            {
+                cs.dintArray[i] = int.Parse(str[i]);
+            }
+            cs.boolVal = Boolean.Parse(txtBoolVal.Text);
+
             
+            cs.byteVal = byte.Parse(txtByteVal.Text);
+            cs.lrealVal = double.Parse(txtLrealVal.Text);
+            
+            cs.simple.lrealVal = double.Parse(txtSimpleLreal.Text);
+            cs.simple.dintVal = int.Parse(txtSimpleDint.Text);
+            return cs;
         }
 
         private void BtnWrite_Click(object sender, EventArgs e)
@@ -160,8 +179,12 @@ namespace csADS
                 client.WriteAny(hstr1, txtStr1.Text,new int[] { 50});
                 client.WriteAny(hstr2, txtStr2.Text, new int[] { 50 });
                 //----write primitive data-------
-                     
-                
+
+
+                //-----write the struct dataType---------------
+                client.WriteAny(hComplexStruct, GetStruct());
+                //-----write the struct dataType---------------
+
 
 
             }
@@ -191,7 +214,7 @@ namespace csADS
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 6)]
         public string stringVal = "";
 
-        public SimpleStruct simple;
+        public SimpleStruct simple = new SimpleStruct();
         //[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]        
         //public string[] strArrray = new string[3] { "","",""};
         // ??????how to read the string array from PLC?????
@@ -204,6 +227,7 @@ namespace csADS
         public double lrealVal;
         public int dintVal;
     }
+
 
      //
      //[StructLayout(LayoutKind.Sequential,Pack =0)]
