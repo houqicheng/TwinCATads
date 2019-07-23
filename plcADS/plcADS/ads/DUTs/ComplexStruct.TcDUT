@@ -8,7 +8,7 @@ STRUCT
 	BoolVal	:BOOL:= TRUE;
 	ByteVal	:BYTE:=12;
 	LrealVal	:LREAL:= 123.67;
-	strVal 	:STRING(5):= 'hello';
+	strVal 	:STRING(10):= 'hello';
 	//strArray: ARRAY[1..3] OF STRING(10) := ['abc', 'qwe', 'hjk'];  ??
 	SimpleStruct1		:SimpleStruct;	
 END_STRUCT

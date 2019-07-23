@@ -76,8 +76,9 @@ namespace csADS
                 client.AddDeviceNotificationEx("MAIN.lreal1", AdsTransMode.OnChange, 100, 0, txtLreal, typeof(double));
                 client.AddDeviceNotificationEx("MAIN.str1", AdsTransMode.OnChange, 100, 0, txtStr1, typeof(string),new int[] { 50});
                 client.AddDeviceNotificationEx("MAIN.str2", AdsTransMode.OnChange, 100, 0, txtStr2, typeof(string),new int[] { 50});
+                //ComplexStruct cs = new ComplexStruct();
+                client.AddDeviceNotificationEx("MAIN.complexStruct", AdsTransMode.OnChange, 100, 0, null, typeof(ComplexStruct));
                 
-
 
 
 
@@ -101,7 +102,12 @@ namespace csADS
                 {
                     textBox.Text = e.Value.ToString();
                 }
-                
+                else if(e.Value.GetType() == typeof(ComplexStruct))
+                {
+                    FillComplex((ComplexStruct)e.Value);
+                }
+
+
             }
             catch (Exception err)
             {
@@ -201,7 +207,7 @@ namespace csADS
             
             cs.byteVal = byte.Parse(txtByteVal.Text);
             cs.lrealVal = double.Parse(txtLrealVal.Text);
-            
+            cs.stringVal = txtStr1Val.Text;
             cs.simple.lrealVal = double.Parse(txtSimpleLreal.Text);
             cs.simple.dintVal = int.Parse(txtSimpleDint.Text);
             return cs;
@@ -253,7 +259,7 @@ namespace csADS
 
         public double lrealVal;
 
-        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 6)]
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
         public string stringVal = "";
 
         public SimpleStruct simple = new SimpleStruct();
