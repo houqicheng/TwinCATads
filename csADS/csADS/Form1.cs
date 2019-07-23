@@ -39,6 +39,8 @@ namespace csADS
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
+
             client = new TcAdsClient();
             try
             {
@@ -63,12 +65,52 @@ namespace csADS
                 hdintArray1 = client.CreateVariableHandle("MAIN.DintArray1");
 
 
+                //-----add adsNotificationEx event---------------
+                client.AdsNotificationEx += new AdsNotificationExEventHandler(ads_Notification);
+
+                client.AddDeviceNotificationEx("MAIN.int1", AdsTransMode.OnChange, 100, 0, txtINT, typeof(short));
+                client.AddDeviceNotificationEx("MAIN.bool1", AdsTransMode.OnChange, 100, 0, txtBool, typeof(Boolean));
+                client.AddDeviceNotificationEx("MAIN.dint1", AdsTransMode.OnChange, 100, 0, txtDint, typeof(int));
+                client.AddDeviceNotificationEx("MAIN.byte1", AdsTransMode.OnChange, 100, 0, txtByte, typeof(byte));
+                client.AddDeviceNotificationEx("MAIN.real1", AdsTransMode.OnChange, 100, 0, txtReal, typeof(Single));
+                client.AddDeviceNotificationEx("MAIN.lreal1", AdsTransMode.OnChange, 100, 0, txtLreal, typeof(double));
+                client.AddDeviceNotificationEx("MAIN.str1", AdsTransMode.OnChange, 100, 0, txtStr1, typeof(string),new int[] { 50});
+                client.AddDeviceNotificationEx("MAIN.str2", AdsTransMode.OnChange, 100, 0, txtStr2, typeof(string),new int[] { 50});
+                
+
+
+
+
 
             }
             catch (Exception err)
             {
                 MessageBox.Show("Form load " + err.Message);
             }
+        }
+
+        private void ads_Notification(object sender, AdsNotificationExEventArgs e)
+        {
+            //throw new NotImplementedException();
+            try
+            {
+                TextBox textBox = new TextBox();
+                textBox = (TextBox)e.UserData;
+                Type type = e.Value.GetType();
+                if (type.IsPrimitive || type == typeof(String))
+                {
+                    textBox.Text = e.Value.ToString();
+                }
+                
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("ads notification " + err.Message);
+            }
+            
+            
+
+
         }
 
         private void btnReadPrimitive_Click(object sender, EventArgs e)
