@@ -64,7 +64,6 @@ namespace csADS
                 //-----------------------------------
                 hdintArray1 = client.CreateVariableHandle("MAIN.DintArray1");
 
-
                 //-----add adsNotificationEx event---------------
                 client.AdsNotificationEx += new AdsNotificationExEventHandler(ads_Notification);
 
@@ -77,12 +76,7 @@ namespace csADS
                 client.AddDeviceNotificationEx("MAIN.str1", AdsTransMode.OnChange, 100, 0, txtStr1, typeof(string),new int[] { 50});
                 client.AddDeviceNotificationEx("MAIN.str2", AdsTransMode.OnChange, 100, 0, txtStr2, typeof(string),new int[] { 50});
                 //ComplexStruct cs = new ComplexStruct();
-                client.AddDeviceNotificationEx("MAIN.complexStruct", AdsTransMode.OnChange, 100, 0, null, typeof(ComplexStruct));
-                
-
-
-
-
+                client.AddDeviceNotificationEx("MAIN.complexStruct", AdsTransMode.OnChange, 100, 0, null, typeof(ComplexStruct));                
             }
             catch (Exception err)
             {
@@ -106,17 +100,11 @@ namespace csADS
                 {
                     FillComplex((ComplexStruct)e.Value);
                 }
-
-
             }
             catch (Exception err)
             {
                 MessageBox.Show("ads notification " + err.Message);
             }
-            
-            
-
-
         }
 
         private void btnReadPrimitive_Click(object sender, EventArgs e)
@@ -133,15 +121,11 @@ namespace csADS
                 txtByte.Text = Convert.ToString(client.ReadAny(hByte1, typeof(Byte)));
                 txtStr1.Text = Convert.ToString(client.ReadAny(hstr1, typeof(string), new int[] { 50 }));
                 txtStr2.Text = Convert.ToString(client.ReadAny(hstr2, typeof(string), new int[] { 50 }));
-
-
-
             }
             catch (Exception err)
             {
                 MessageBox.Show("btnReadPrimitive " + err.Message);
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -153,27 +137,21 @@ namespace csADS
             {
                 lstArray.Items.Add(Reader.ReadInt16());
             }
-
-            lstArray2.Items.Clear();
-
+            button1.Enabled = false;
             // client.ReadAny(hdintArray1, typeof(int), new int[] { 40 });
             //??  how to read DINT array from plc by ReadAny method  ??
-
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             client.Dispose();
-
         }
 
         private void BtnReadStruct_Click(object sender, EventArgs e)
         {
             ComplexStruct cs;
             cs = (ComplexStruct)client.ReadAny(hComplexStruct, typeof(ComplexStruct));
-
             FillComplex(cs);
-
         }
 
         private void FillComplex(ComplexStruct cs)
@@ -190,8 +168,6 @@ namespace csADS
 
             txtSimpleDint.Text = cs.simple.dintVal.ToString();
             txtSimpleLreal.Text = cs.simple.lrealVal.ToString();
-
-
         }
         private ComplexStruct GetStruct()
         {
@@ -203,7 +179,6 @@ namespace csADS
                 cs.dintArray[i] = int.Parse(str[i]);
             }
             cs.boolVal = Boolean.Parse(txtBoolVal.Text);
-
             
             cs.byteVal = byte.Parse(txtByteVal.Text);
             cs.lrealVal = double.Parse(txtLrealVal.Text);
@@ -227,21 +202,14 @@ namespace csADS
                 client.WriteAny(hstr1, txtStr1.Text,new int[] { 50});
                 client.WriteAny(hstr2, txtStr2.Text, new int[] { 50 });
                 //----write primitive data-------
-
-
                 //-----write the struct dataType---------------
                 client.WriteAny(hComplexStruct, GetStruct());
                 //-----write the struct dataType---------------
-
-
-
             }
             catch (Exception err)
             {
                 MessageBox.Show("Write all " + err.Message);
             }
-            
-
         }
     }
 
@@ -261,28 +229,15 @@ namespace csADS
 
         [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 11)]
         public string stringVal = "";
-
         public SimpleStruct simple = new SimpleStruct();
         //[MarshalAs(UnmanagedType.ByValTStr, SizeConst = 33)]        
         //public string[] strArrray = new string[3] { "","",""};
-        // ??????how to read the string array from PLC?????
-        
+        // ??????how to read the string array from PLC?????        
     }
-
     [StructLayout(LayoutKind.Sequential,Pack =0)]
     public class SimpleStruct
     {
         public double lrealVal;
         public int dintVal;
     }
-
-
-     //
-     //[StructLayout(LayoutKind.Sequential,Pack =0)]
-
-     //[MarshalAs(UnmanagedType.ByValArray,SizeConst =4)]     //array
-     //[MarshalAs(UnmanagedType.I1)]  //bool
-     //[MarshalAs(UnmanagedType.ByValTStr,SizeConst =6)]
-
-
 }
