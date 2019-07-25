@@ -9,5 +9,6 @@ I copied the samples from Beckhoff infosystem.
 
 Huanghansheng forked this repo 
 
-I am using visual studio 2019 and TwinCAT 3 4022.27
+I am using visual studio 2017 and TwinCAT 3 4022.27
+
 

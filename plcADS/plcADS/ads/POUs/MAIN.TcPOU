@@ -18,6 +18,8 @@ VAR
 	intArray: ARRAY [1..10] OF INT := [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 	DintArray1	: ARRAY[1..10] OF DINT;
 	complexStruct		:ComplexStruct;
+	
+	PLCVar		:PLCStruct;
 END_VAR
 ]]></Declaration>
     <Implementation>
