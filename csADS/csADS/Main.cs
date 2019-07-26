@@ -31,5 +31,11 @@ namespace csADS
             Form form1 = new Form1();
             form1.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form sample02 = new Sample02();
+            sample02.ShowDialog();
+        }
     }
 }

@@ -32,8 +32,8 @@
             this.txtExplain = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -81,15 +81,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 37);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Sample02";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Info;
@@ -99,6 +90,16 @@
             this.textBox1.Size = new System.Drawing.Size(211, 57);
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "Transmitting Structures to PLC";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 86);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(144, 37);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Sample02";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Main
             // 

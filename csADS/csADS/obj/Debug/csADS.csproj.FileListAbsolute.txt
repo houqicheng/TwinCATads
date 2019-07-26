@@ -15,3 +15,4 @@ C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.csproj.CopyComplete
 C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.exe
 C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.pdb
 C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.Main.resources
+C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.Sample02.resources
