@@ -17,7 +17,7 @@ namespace csADS
     {
         TcAdsClient client;
         int hPLCVar;
-        AdsBinaryWriter writer;
+        BinaryWriter writer;
         AdsStream stream;
         public Sample02()
         {
@@ -41,8 +41,9 @@ namespace csADS
         }
         private void btnWrite_Click(object sender, EventArgs e)
         {
-            stream = new AdsStream(34);
-            writer = new AdsBinaryWriter(stream);
+            stream = new AdsStream(32);
+            writer = new BinaryWriter(stream);
+            stream.Position = 0;
             try
             {
                 writer.Write(short.Parse(txtINT.Text));
