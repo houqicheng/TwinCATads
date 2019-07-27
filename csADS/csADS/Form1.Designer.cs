@@ -71,10 +71,12 @@
             this.txtSimpleLreal = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.BtnWrite = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -96,7 +98,7 @@
             this.groupBox1.Controls.Add(this.btnReadPrimitive);
             this.groupBox1.Controls.Add(this.txtINT);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(11, 13);
+            this.groupBox1.Location = new System.Drawing.Point(16, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(191, 423);
             this.groupBox1.TabIndex = 0;
@@ -254,12 +256,12 @@
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.lstArray);
-            this.groupBox2.Location = new System.Drawing.Point(222, 16);
+            this.groupBox2.Location = new System.Drawing.Point(500, 13);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(146, 420);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Sample01";
             // 
             // button1
             // 
@@ -296,7 +298,7 @@
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.txtIntVal);
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Location = new System.Drawing.Point(374, 16);
+            this.groupBox3.Location = new System.Drawing.Point(229, 34);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(202, 246);
             this.groupBox3.TabIndex = 2;
@@ -439,7 +441,7 @@
             this.groupBox4.Controls.Add(this.BtnReadStruct);
             this.groupBox4.Controls.Add(this.txtSimpleLreal);
             this.groupBox4.Controls.Add(this.label17);
-            this.groupBox4.Location = new System.Drawing.Point(374, 273);
+            this.groupBox4.Location = new System.Drawing.Point(229, 291);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(202, 163);
             this.groupBox4.TabIndex = 33;
@@ -484,7 +486,7 @@
             // 
             this.BtnWrite.BackColor = System.Drawing.Color.CornflowerBlue;
             this.BtnWrite.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.BtnWrite.Location = new System.Drawing.Point(12, 442);
+            this.BtnWrite.Location = new System.Drawing.Point(12, 526);
             this.BtnWrite.Name = "BtnWrite";
             this.BtnWrite.Size = new System.Drawing.Size(158, 61);
             this.BtnWrite.TabIndex = 17;
@@ -492,16 +494,28 @@
             this.BtnWrite.UseVisualStyleBackColor = false;
             this.BtnWrite.Click += new System.EventHandler(this.BtnWrite_Click);
             // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox5.Controls.Add(this.groupBox1);
+            this.groupBox5.Controls.Add(this.groupBox3);
+            this.groupBox5.Controls.Add(this.groupBox4);
+            this.groupBox5.Location = new System.Drawing.Point(12, 13);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(482, 500);
+            this.groupBox5.TabIndex = 34;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Sample07";
+            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 515);
+            this.ClientSize = new System.Drawing.Size(654, 600);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.BtnWrite);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -513,6 +527,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -562,6 +577,7 @@
         private System.Windows.Forms.TextBox txtSimpleLreal;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button BtnWrite;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }
 

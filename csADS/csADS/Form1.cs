@@ -211,6 +211,11 @@ namespace csADS
                 MessageBox.Show("Write all " + err.Message);
             }
         }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 
     [StructLayout(LayoutKind.Sequential,Pack =0)]
