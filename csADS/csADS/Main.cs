@@ -37,5 +37,11 @@ namespace csADS
             Form sample02 = new Sample02();
             sample02.ShowDialog();
         }
+
+        private void btnDateTime_Click(object sender, EventArgs e)
+        {
+            Form datetimeForm = new DateTimeSample();
+            datetimeForm.ShowDialog();
+        }
     }
 }

@@ -20,6 +20,8 @@ VAR
 	complexStruct		:ComplexStruct;
 	
 	PLCVar		:PLCStruct;
+	time1		:TIME:= T#21H33M23S231MS;
+	date1		:DT:= DT#1993-06-12-15:36:55.40;
 END_VAR
 ]]></Declaration>
     <Implementation>

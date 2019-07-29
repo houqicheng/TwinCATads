@@ -31,8 +31,7 @@ namespace csADS
                 client = new TcAdsClient();
                 client.Connect(851);
                 
-                hPLCVar = client.CreateVariableHandle("MAIN.PLCVar");
-                
+                hPLCVar = client.CreateVariableHandle("MAIN.PLCVar");                
             }
             catch (Exception err)
             {
@@ -54,11 +53,8 @@ namespace csADS
                 stream.Position = 16;
                 writer.Write(double.Parse(txtLreal.Text));
                 stream.Position = 24;
-                writer.Write(float.Parse(txtReal.Text));
-                
-
-                client.Write(hPLCVar, stream);
-                
+                writer.Write(float.Parse(txtReal.Text));  
+                client.Write(hPLCVar, stream);                
             }
             catch (Exception err)
             {
