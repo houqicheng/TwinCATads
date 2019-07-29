@@ -6,7 +6,6 @@ C:\Jack\2019git\TwinCATadsCS\csADS\csADS\bin\Debug\csADS.exe
 C:\Jack\2019git\TwinCATadsCS\csADS\csADS\bin\Debug\csADS.pdb
 C:\Jack\2019git\TwinCATadsCS\csADS\csADS\bin\Debug\TwinCAT.Ads.dll
 C:\Jack\2019git\TwinCATadsCS\csADS\csADS\bin\Debug\TwinCAT.Ads.xml
-C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.csprojAssemblyReference.cache
 C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.DateTimeSample.resources
 C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.Form1.resources
 C:\Jack\2019git\TwinCATadsCS\csADS\csADS\obj\Debug\csADS.Main.resources
