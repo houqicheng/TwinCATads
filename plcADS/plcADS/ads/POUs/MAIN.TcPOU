@@ -22,6 +22,7 @@ VAR
 	PLCVar		:PLCStruct;
 	time1		:TIME:= T#21H33M23S231MS;
 	date1		:DT:= DT#1993-06-12-15:36:55.40;
+	date2		:DATE := D#1993-06-12;
 END_VAR
 ]]></Declaration>
     <Implementation>

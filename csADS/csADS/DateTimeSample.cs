@@ -16,8 +16,12 @@ namespace csADS
     {
         int htime1;
         int hdate1;
-        TcAdsClient client;
+        int hdate2;
 
+        TcAdsClient client;
+        AdsBinaryReader reader;
+        AdsStream stream;
+        AdsBinaryWriter writer;
 
         public DateTimeSample()
         {
@@ -34,29 +38,87 @@ namespace csADS
             {
                 htime1  = client.CreateVariableHandle("MAIN.time1");
                 hdate1 =  client.CreateVariableHandle("MAIN.date1");
-
-                client.AddDeviceNotificationEx("MAIN.time1", AdsTransMode.OnChange, 100, 0, txtTime, typeof(TimeSpan));
-                //client.AddDeviceNotificationEx("MAIN.date1", AdsTransMode.OnChange, 100, 0, txtDate, typeof(DateTime));
-                client.AdsNotificationEx += AdsNotificationEx;
-
+                hdate2 = client.CreateVariableHandle("MAIN.date2");
             }
             catch (Exception err)
             {
-                MessageBox.Show("DateTime Form load " + err.Message);
-                //throw;
+                MessageBox.Show("DateTime Form load " + err.Message);               
             }
         }        
 
         private void AdsNotificationEx(object sender, AdsNotificationExEventArgs e)
         {
-            if (e.Value.GetType() == typeof(TimeSpan))
+            //
+        }
+
+        private void BtnRead_Click(object sender, EventArgs e)
+        {
+            stream = new AdsStream(4);
+            reader = new AdsBinaryReader(stream);
+
+            try
             {
-                txtTime.Text = ((TimeSpan)e.Value).ToString();
+                client.Read(htime1, stream);
+
+                txtTime.Text = (reader.ReadPlcTIME()).ToString();
+                stream.Position = 0;
+
+                client.Read(hdate1, stream);
+                txtDate.Text = reader.ReadPlcDATE().ToString();
+                stream.Position = 0;
+
+                client.Read(hdate2, stream);
+                txtDate2.Text = reader.ReadPlcDATE().ToString();
+                stream.Position = 0;
+
+
             }
-            else if (e.Value.GetType() == typeof(DateTime))
+            catch (Exception err)
             {
-                txtDate.Text = ((DateTime)e.Value).ToString();
+                MessageBox.Show("BtnRead " + err.Message);                
             }
+            
+
+        }
+
+        private void BtnWrite_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AdsStream stream = new AdsStream(4);
+                writer = new AdsBinaryWriter(stream);
+                writer.WritePlcType(TimeSpan.Parse(txtTime.Text));
+
+                client.Write(htime1, stream);
+
+                stream.Position = 0;
+                writer.WritePlcType(DateTime.Parse(txtDate.Text));
+                client.Write(hdate1, stream);
+
+                stream.Position = 0;
+                writer.WritePlcType(DateTime.Parse(txtDate2.Text));
+                client.Write(hdate2, stream);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("BtnWrite " + err.Message);
+            }
+            
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DateTimeSample_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            client.DeleteVariableHandle(hdate1);
+            client.DeleteVariableHandle(htime1);
+            client.DeleteVariableHandle(hdate2);
+
+            client.Dispose();
         }
     }
 }
